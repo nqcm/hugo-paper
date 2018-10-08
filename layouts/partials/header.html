@@ -21,11 +21,18 @@
   <meta name="description" content="{{ .Site.Params.description }}">
   <meta name="author" content="{{ .Site.Params.author }}">
   {{ end -}}
+
+  <!-- Opengraph -->
+  {{ if .Site.Params.opengraph }}{{ partial "opengraph.html" . }}{{ end }}
+  
   <!-- Styles -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Ruda" rel="stylesheet">
   <link href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/atom-one-dark.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link href="{{.Site.BaseURL}}css/style.css" rel="stylesheet">
   <!-- Favicons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   <link rel="apple-touch-icon" href="{{.Site.BaseURL}}img/apple-touch-icon.png">
   <link rel="icon" href="{{.Site.BaseURL}}img/favicon.ico">
   <!-- Generator -->
@@ -41,7 +48,7 @@
     {{ if .IsHome }}
     <h1 class="title"><a href="{{.Site.BaseURL}}">{{ .Site.Title }}</a></h1>
     {{ else }}
-    <p class="title"><a href="{{.Site.BaseURL}}">{{ .Site.Title }}</a></p>
+    <h1 class="title"><a href="{{.Site.BaseURL}}">{{ .Site.Title }}</a></h1>
     {{ end }}
     <button class="menu-toggle" type="button"></button>
     <nav class="menu">

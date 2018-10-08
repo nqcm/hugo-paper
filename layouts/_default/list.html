@@ -12,13 +12,13 @@
 {{ range $index, $page := $paginator.Pages }}
 {{ if and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) }}
 {{ .Scratch.Set "postClass" "first-entry" }}
-{{ .Scratch.Set "firstEmoji" "<span class=\"welcome-emoji\">👉</span>" }}
+{{ .Scratch.Set "firstEmoji" "<span class=\"welcome-emoji\">🎯</span>" }}
 {{ else }}
 {{ .Scratch.Set "postClass" "post-entry" }}
 {{ end }}
 <article class="post {{ .Scratch.Get `postClass` }}">
   <header class="post-header">
-    {{ safeHTML (.Scratch.Get `firstEmoji`) }}
+    <!-- {{ safeHTML (.Scratch.Get `firstEmoji`) }} -->
     <h2 class="post-title">{{ .Title }}</h2>
   </header>
   <p class="post-summary">{{ .Summary | plainify | htmlUnescape }}...</p>
