@@ -11,9 +11,7 @@
   <div class="post-content">{{ .Content }}</div>
   {{ partial "post-footer.html" . }}
   <br>
-  <hr>
-  <br>
-
+  
   <!-- Comments system area start -->
   {{ if not (eq .Params.comments false) }}
   {{ if .Site.DisqusShortname }}
